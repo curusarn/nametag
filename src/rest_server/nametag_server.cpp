@@ -112,10 +112,10 @@ int main(int argc, char* argv[]) {
 
   // Start the server
   server.set_log_file(&log_file);
-  server.set_max_connections(256);
+  //server.set_max_connections(256);
   server.set_max_request_body_size(1<<20);
   server.set_min_generated(32 * (1<<10));
-  server.set_threads(0);
+  server.set_threads(100);
   server.set_timeout(60);
 
   if (!server.start(&service, port))
